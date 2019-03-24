@@ -1,0 +1,60 @@
+<div class="buttons">
+    <div class="team-buttom">
+        <button (click)="teamSelection()">team selection<span class="caret-right"></span> </button>
+        <div class="team-buttom" *ngIf="toggleTeamSelection">
+            <ul>
+                <li *ngFor="let team of teamList" (click)=" selectedTeam(team)" (click)="teamSelection()">{{team}}</li>
+            </ul>
+        </div>
+    </div>
+    <div class="poc-buttom">
+        <button (click)="pocSelection()" [disabled]="!toggleTeamSelection">poc selection</button>
+        <div class="poc-buttom" *ngIf="togglePocSelection">
+            <ul>
+                <li *ngFor="let poc of pocList" (click)="selectedPoc(poc)">{{poc}}</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="webstar-table">
+    <table>
+        <thead>
+            <tr class="table-head">
+                <th>webstar#</th>
+                <th>Age</th>
+                <th>Severity</th>
+                <th>Description</th>
+                <th>SS Queue Date</th>
+                <th>Current Date</th>
+                <th>SS_Queue_Age</th>
+                <th>Last Updated</th>
+                <th>Portal_Status</th>
+                <th>Webstar_Status</th>
+                <th>Remarks</th>
+                <th>Classfication</th>
+                <th>Module</th>
+                <th>Offshore_POC</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let web of webstarDetails">
+            <tr *ngIf="web.Classification == selectedTeamValue ">
+                <td class="webstar">{{web.Webstar}}</td>
+                <td class="age">{{web.Age}}</td>
+                <td class="severity">{{web.Sev}}</td>
+                <td class="descriptionn">{{web.Description}}</td>
+                <td class="date">{{web.SS_Queue_Date}}</td>
+                <td class="date">{{web.Current_date}}</td>
+                <td class="age">{{web.SS_Queue_Age}}</td>
+                <td class="date">{{web.Last_updated_Date}}</td>
+                <td class="p-status">{{web.Portal_Status}}</td>
+                <td class="w-status">{{web.Webstar_Status}}</td>
+                <td class="remark">{{web.Remarks}}</td>
+                <td class="classification">{{web.Classification}}</td>
+                <td class="module">{{web.Module}}</td>
+                <td class="poc">{{web.Offshore_POC}}</td>
+            </tr>
+        </tbody>
+
+    </table>
+</div>

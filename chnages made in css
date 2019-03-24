@@ -1,0 +1,50 @@
+.buttons {
+    display: flex;
+}
+
+li {
+    list-style-type: none;
+}
+
+.webstar-table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.webstar-table td,
+.webstar-table th {
+    border: 1px solid #ddd;
+    padding: 1px;
+}
+
+.webstar-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+    ;
+}
+
+.webstar-table tr:hover {
+    background-color: #ddd;
+}
+
+.webstar-table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #2882BA;
+    color: white;
+}
+
+.webstar {
+    width: 10px;
+    height: auto;
+}
+
+.age {
+    width: 10px;
+    height: auto;
+}
+
+.severity {
+    width: 10px;
+    height: auto;
+}
